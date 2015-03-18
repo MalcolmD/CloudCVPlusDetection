@@ -1,0 +1,4 @@
+cmd_Release/obj.target/cloudcv/src/framework/marshal/marshal.o := g++ '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' '-DTARGET_PLATFORM_LINUX' -I/usr/include/nodejs/src -I/usr/include/nodejs/deps/uv/include -I/usr/include/nodejs/deps/v8/include -I../src -I../node_modules/nan -I/home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include  -fPIC -Wall -Wextra -Wno-unused-parameter -pthread -m64 -std=gnu++11 -fexceptions -O2 -fno-strict-aliasing -fno-tree-vrp -fno-omit-frame-pointer -fno-rtti -MMD -MF ./Release/.deps/Release/obj.target/cloudcv/src/framework/marshal/marshal.o.d.raw   -c -o Release/obj.target/cloudcv/src/framework/marshal/marshal.o ../src/framework/marshal/marshal.cpp
+Release/obj.target/cloudcv/src/framework/marshal/marshal.o: \
+ ../src/framework/marshal/marshal.cpp
+../src/framework/marshal/marshal.cpp:
