@@ -1,4 +1,4 @@
-cmd_Release/obj.target/cloudcv/src/modules/numbersDetect/numbersDetectBinding.o := g++ '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' '-DTARGET_PLATFORM_LINUX' -I/usr/include/nodejs/src -I/usr/include/nodejs/deps/uv/include -I/usr/include/nodejs/deps/v8/include -I../src -I../node_modules/nan -I/home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include  -fPIC -Wall -Wextra -Wno-unused-parameter -pthread -m64 -std=gnu++11 -fexceptions -O2 -fno-strict-aliasing -fno-tree-vrp -fno-omit-frame-pointer -fno-rtti -MMD -MF ./Release/.deps/Release/obj.target/cloudcv/src/modules/numbersDetect/numbersDetectBinding.o.d.raw   -c -o Release/obj.target/cloudcv/src/modules/numbersDetect/numbersDetectBinding.o ../src/modules/numbersDetect/numbersDetectBinding.cpp
+cmd_Release/obj.target/cloudcv/src/modules/numbersDetect/numbersDetectBinding.o := g++ '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' '-DTARGET_PLATFORM_LINUX' -I/usr/include/nodejs/src -I/usr/include/nodejs/deps/uv/include -I/usr/include/nodejs/deps/v8/include -I../src -I../node_modules/nan -I/home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include  -fPIC -Wall -Wextra -Wno-unused-parameter -pthread -m64 -g -std=gnu++11 -fexceptions -O2 -fno-strict-aliasing -fno-tree-vrp -fno-omit-frame-pointer -fno-rtti -MMD -MF ./Release/.deps/Release/obj.target/cloudcv/src/modules/numbersDetect/numbersDetectBinding.o.d.raw   -c -o Release/obj.target/cloudcv/src/modules/numbersDetect/numbersDetectBinding.o ../src/modules/numbersDetect/numbersDetectBinding.cpp
 Release/obj.target/cloudcv/src/modules/numbersDetect/numbersDetectBinding.o: \
  ../src/modules/numbersDetect/numbersDetectBinding.cpp ../src/cloudcv.hpp \
  /usr/include/nodejs/deps/v8/include/v8.h \
@@ -12,8 +12,9 @@ Release/obj.target/cloudcv/src/modules/numbersDetect/numbersDetectBinding.o: \
  /usr/include/nodejs/src/node.h /usr/include/nodejs/src/node_buffer.h \
  /usr/include/nodejs/src/node_version.h \
  /usr/include/nodejs/src/node_object_wrap.h \
- ../src/modules/numbersDetect/numbersDetect.cpp \
- ../src/modules/numbersDetect/numbersDetect.hpp \
+ ../src/framework/marshal/marshal.hpp \
+ ../src/framework/marshal/primitives.hpp \
+ ../src/framework/marshal/opencv.hpp \
  /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/opencv.hpp \
  /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/core.hpp \
  /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/core/cvdef.h \
@@ -49,16 +50,11 @@ Release/obj.target/cloudcv/src/modules/numbersDetect/numbersDetectBinding.o: \
  /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/videoio.hpp \
  /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/highgui.hpp \
  /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/ml.hpp \
- /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/objdetect/objdetect.hpp \
- /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/highgui/highgui.hpp \
- /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/imgproc/imgproc.hpp \
- ../src/framework/marshal/marshal.hpp \
- ../src/framework/marshal/primitives.hpp \
- ../src/framework/marshal/opencv.hpp ../src/framework/marshal/stl.hpp \
- ../src/framework/NanCheck.hpp ../src/framework/Logger.h \
- ../src/modules/analyze/dominantColors.hpp \
+ ../src/framework/marshal/stl.hpp ../src/framework/NanCheck.hpp \
+ ../src/framework/Logger.h ../src/modules/analyze/dominantColors.hpp \
  ../src/modules/common/Numeric.hpp ../src/framework/Job.hpp \
  ../src/framework/ImageSource.hpp \
+ ../src/modules/numbersDetect/numbersDetect.hpp \
  ../src/framework/marshal/node_object_builder.hpp
 ../src/modules/numbersDetect/numbersDetectBinding.cpp:
 ../src/cloudcv.hpp:
@@ -75,8 +71,9 @@ Release/obj.target/cloudcv/src/modules/numbersDetect/numbersDetectBinding.o: \
 /usr/include/nodejs/src/node_buffer.h:
 /usr/include/nodejs/src/node_version.h:
 /usr/include/nodejs/src/node_object_wrap.h:
-../src/modules/numbersDetect/numbersDetect.cpp:
-../src/modules/numbersDetect/numbersDetect.hpp:
+../src/framework/marshal/marshal.hpp:
+../src/framework/marshal/primitives.hpp:
+../src/framework/marshal/opencv.hpp:
 /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/opencv.hpp:
 /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/core.hpp:
 /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/core/cvdef.h:
@@ -112,12 +109,6 @@ Release/obj.target/cloudcv/src/modules/numbersDetect/numbersDetectBinding.o: \
 /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/videoio.hpp:
 /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/highgui.hpp:
 /home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/ml.hpp:
-/home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/objdetect/objdetect.hpp:
-/home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/highgui/highgui.hpp:
-/home/milkyway/Development/SeniorProjects/Node/cloudCVRepos/CloudCVBackend/node_modules/native-opencv/opencv/include/opencv2/imgproc/imgproc.hpp:
-../src/framework/marshal/marshal.hpp:
-../src/framework/marshal/primitives.hpp:
-../src/framework/marshal/opencv.hpp:
 ../src/framework/marshal/stl.hpp:
 ../src/framework/NanCheck.hpp:
 ../src/framework/Logger.h:
@@ -125,4 +116,5 @@ Release/obj.target/cloudcv/src/modules/numbersDetect/numbersDetectBinding.o: \
 ../src/modules/common/Numeric.hpp:
 ../src/framework/Job.hpp:
 ../src/framework/ImageSource.hpp:
+../src/modules/numbersDetect/numbersDetect.hpp:
 ../src/framework/marshal/node_object_builder.hpp:

@@ -1,10 +1,12 @@
 #include <cloudcv.hpp>
-#include "modules/numbersDetect/numbersDetect.cpp"
+
+
 
 #include <framework/marshal/marshal.hpp>
 #include <framework/NanCheck.hpp>
 #include "framework/Job.hpp"
 #include "framework/ImageSource.hpp"
+#include "modules/numbersDetect/numbersDetect.hpp"
 
 #include <vector>
 
@@ -46,8 +48,6 @@ namespace cloudcv
             TRACE_FUNCTION;
             cv::Mat image = m_imageSource->getImage();
 
-            printf("It got this far!");
-
             if (image.empty())
             {
                 SetErrorMessage("Cannot decode image");
@@ -73,7 +73,7 @@ namespace cloudcv
 
     private:
         ImageSourcePtr m_imageSource;
-        cv::Rect  m_detectResult;
+        std::vector<cv::Rect>  m_detectResult;
     };
 
     NAN_METHOD(detectNumbers)

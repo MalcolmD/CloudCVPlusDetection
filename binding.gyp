@@ -104,7 +104,7 @@
                     'libraries!': [ '-undefined dynamic_lookup' ],
 
                     'cflags_cc!': [ '-fno-exceptions' ],
-                    "cflags": [ '-std=gnu++11', '-fexceptions' ],                    
+                    "cflags": [ '-g', '-std=gnu++11', '-fexceptions' ],                    
                 }],
 
                 ['OS=="win"', {

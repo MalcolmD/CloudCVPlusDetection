@@ -7,7 +7,7 @@ var fs     = require('fs');
 
 
 
-cloudcv.analyzeImage("../opencv-logo.jpg", function(error, result) 
+cloudcv.analyzeImage("num.png", function(error, result) 
 {           
 	console.log(result.dominantColors.length);    
  

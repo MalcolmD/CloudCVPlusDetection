@@ -18,6 +18,7 @@ CFLAGS_Debug := \
 	-Wno-unused-parameter \
 	-pthread \
 	-m64 \
+	-g \
 	-std=gnu++11 \
 	-fexceptions \
 	-g \
@@ -52,6 +53,7 @@ CFLAGS_Release := \
 	-Wno-unused-parameter \
 	-pthread \
 	-m64 \
+	-g \
 	-std=gnu++11 \
 	-fexceptions \
 	-O2 \
