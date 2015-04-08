@@ -24,8 +24,8 @@ run the test by invoking node's javascript...
 	$> node manualNumbersDetectionTest.js 
 
 
-This will run the example file that runs a face detection on the 
-picture indicated in the test file.
+This will run the example file that runs a face detection on a 
+picture.
 
 
 Note
