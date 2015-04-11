@@ -33,9 +33,8 @@ namespace cloudcv
     equalizeHist( frame_gray, frame_gray );
 
    //-- Detect numbers
-   std::cout << "Before call" << std::endl;
    numbers_cascade.detectMultiScale( frame_gray, number_sets, 1.1, 2, 0|cv::CASCADE_SCALE_IMAGE);
-   std::cout << "After call" << std::endl;
+  
    
    //-- Return vector of detections
    return number_sets;
