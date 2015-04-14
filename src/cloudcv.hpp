@@ -10,5 +10,5 @@ namespace cloudcv
     NAN_METHOD(analyzeImage);
     NAN_METHOD(calibrationPatternDetect);
     NAN_METHOD(calibrateCamera);
-    NAN_METHOD(detectNumbers);
+    NAN_METHOD(detectObjects);
 }

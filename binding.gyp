@@ -52,9 +52,9 @@
                 "src/modules/common/ImageUtils.hpp", 
                 "src/modules/common/ImageUtils.cpp", 
 
-                "src/modules/numbersDetect/numbersDetect.hpp", 
-                "src/modules/numbersDetect/numbersDetect.cpp", 
-                "src/modules/numbersDetect/numbersDetectBinding.cpp",
+                "src/modules/objectsDetect/objectsDetect.hpp", 
+                "src/modules/objectsDetect/objectsDetect.cpp", 
+                "src/modules/objectsDetect/objectsDetectBinding.cpp",
 
                 "src/modules/analyze/analyze.cpp", 
                 "src/modules/analyze/analyze.hpp", 

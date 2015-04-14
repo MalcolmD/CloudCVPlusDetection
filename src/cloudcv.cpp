@@ -16,7 +16,7 @@ void RegisterModule(Handle<Object> target)
     NODE_SET_METHOD(target, "calibrationPatternDetect", calibrationPatternDetect);
     NODE_SET_METHOD(target, "calibrateCamera",          calibrateCamera);
     NODE_SET_METHOD(target, "loadImage",                loadImage);
-    NODE_SET_METHOD(target, "detectNumbers",            detectNumbers);
+    NODE_SET_METHOD(target, "detectObjects",            detectObjects);
 
     ImageView::Init(target);
 }

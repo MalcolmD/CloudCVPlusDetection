@@ -6,7 +6,7 @@
 #include <framework/NanCheck.hpp>
 #include "framework/Job.hpp"
 #include "framework/ImageSource.hpp"
-#include "modules/numbersDetect/numbersDetect.hpp"
+#include "modules/objectsDetect/objectsDetect.hpp"
 
 #include <vector>
 
@@ -20,18 +20,18 @@ using namespace cloudcv;
 
 namespace cloudcv
 {
-    class DetectNumbersTask : public Job
+    class DetectObjectsTask : public Job
     {
     public:
 
-        DetectNumbersTask(ImageSourcePtr image, NanCallback * callback)
+        DetectObjectsTask(ImageSourcePtr image, NanCallback * callback)
             : Job(callback)
             , m_imageSource(image)
         {
             TRACE_FUNCTION;
         }
 
-        virtual ~DetectNumbersTask()
+        virtual ~DetectObjectsTask()
         {
             TRACE_FUNCTION;
         }
@@ -76,7 +76,7 @@ namespace cloudcv
         std::vector<cv::Rect>  m_detectResult;
     };
 
-    NAN_METHOD(detectNumbers)
+    NAN_METHOD(detectObjects)
     {
         TRACE_FUNCTION;
         NanEscapableScope();
@@ -93,7 +93,7 @@ namespace cloudcv
             .Argument(1).IsFunction().Bind(imageCallback))
         {
             NanCallback *callback = new NanCallback(imageCallback);
-            NanAsyncQueueWorker(new DetectNumbersTask(CreateImageSource(imageBuffer), callback));
+            NanAsyncQueueWorker(new DetectObjectsTask(CreateImageSource(imageBuffer), callback));
             NanReturnUndefined();
         }
         else if (NanCheck(args)
@@ -103,7 +103,7 @@ namespace cloudcv
             .Argument(1).IsFunction().Bind(imageCallback))
         {
             NanCallback *callback = new NanCallback(imageCallback);
-            NanAsyncQueueWorker(new DetectNumbersTask(CreateImageSource(imageFile), callback));
+            NanAsyncQueueWorker(new DetectObjectsTask(CreateImageSource(imageFile), callback));
             NanReturnUndefined();
         }
         else if (!error.empty())

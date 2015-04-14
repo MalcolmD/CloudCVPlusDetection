@@ -1,4 +1,4 @@
-#include "numbersDetect.hpp"
+#include "objectsDetect.hpp"
 #include "opencv2/objdetect/objdetect.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
@@ -12,7 +12,7 @@
 namespace cloudcv
 {
   
-  cv::CascadeClassifier numbers_cascade;
+  cv::CascadeClassifier objects_cascade;
 
   /* Function that does the actual detection.
   * ---Parameters---
@@ -32,9 +32,20 @@ namespace cloudcv
     cvtColor( frame, frame_gray, cv::COLOR_BGR2GRAY );
     equalizeHist( frame_gray, frame_gray );
 
-   //-- Detect numbers
-   numbers_cascade.detectMultiScale( frame_gray, number_sets, 1.1, 2, 0|cv::CASCADE_SCALE_IMAGE);
-  
+   //-- Detect objects
+   std::cout << "before call" << std::endl;
+   objects_cascade.detectMultiScale( frame_gray, number_sets, 1.1, 2, 0|cv::CASCADE_SCALE_IMAGE);
+   std::cout << "after call" << std::endl;
+
+
+   //-- Format rectangle data to be acceptable input
+   //-- The rectangles will thereafter store member variables:
+   //-- int x1, int x2, int y1, int y2 instead of int x, int y, int width, int height
+   for(std::vector<cv::Rect>::iterator it = number_sets.begin(); it < number_sets.end(); ++it)
+    {
+      it->width += it->x;
+      it->height += it->y;
+    }
    
    //-- Return vector of detections
    return number_sets;
@@ -50,13 +61,13 @@ namespace cloudcv
   * Returns a bool value whether a detection was captured or not */
   bool ProcessImage(cv::Mat image,  std::vector<cv::Rect>& result)
   {
-   cv::String numbers_cascade_name = "haarcascade_frontalface_alt.xml";
+   cv::String objects_cascade_name = "haarcascade_frontalface_alt.xml";
    
    //std::vector<cv::Rect> results;
 
    
-   //-- 1. Load the numbers cascade
-   if( !numbers_cascade.load( numbers_cascade_name ) )
+   //-- 1. Load the objects cascade
+   if( !objects_cascade.load( objects_cascade_name ) )
    {
     printf("--(!)Error loading cascade\n"); 
     return false; 
